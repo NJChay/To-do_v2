@@ -22,13 +22,16 @@ export class SearchheaderComponent implements OnInit{
   newTask(name: string) {
     let task = {
       name,
-      checked: false
+      checked: false,
+      id: name
+      //id: name + JSON.parse(localStorage.getItem("main")).length
     }
     if (localStorage.length === 0) {
       let tasks: Task[]= [];
       localStorage.setItem("main",JSON.stringify(tasks))
     }
     //let newTasks: Task[] = JSON.parse(localStorage.getItem("main")).push(task);
+    TASKS.push(task);
   } 
 
 }
