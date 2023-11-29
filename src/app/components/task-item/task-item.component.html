@@ -1,0 +1,5 @@
+<div class = "task">
+    <input class = "check" type = "checkbox" [checked]="task?.checked" id = {{task?.name}}>
+    <label class = "item" for = {{task?.name}}> {{task?.name}}</label>
+    <app-searchbutton (btnClick)="deleteItem(task)" text = "Delete" style="align-self: flex-end;" [class]="'delete-button'"></app-searchbutton>
+</div>
