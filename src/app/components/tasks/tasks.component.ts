@@ -18,16 +18,11 @@ export class TasksComponent implements OnInit{
      
   }
   ngOnInit(): void {
-    if (localStorage.getItem("main") !== null) {
-      let tasks: Task[]= [];
+    if (localStorage.getItem("main") === null) {
       localStorage.setItem("main",JSON.stringify(TASKS));
     } else {
-      /*
-      let tasks = JSON.parse(localStorage.getItem("main"));
-      for (let i = 0; i < tasks.length; i++) {
-        TASKS.push(tasks[i])
-      }
-      */
+      const data = JSON.parse(localStorage.getItem('main') || '{}');
+      data.forEach((task: Task) => {TASKS.push(task)});
     }
     this.taskService.getTasks().subscribe((tasks) => this.tasks = tasks);
   }

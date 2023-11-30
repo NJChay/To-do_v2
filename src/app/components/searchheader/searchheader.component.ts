@@ -27,8 +27,8 @@ export class SearchheaderComponent implements OnInit{
       id: "" + Math.random()
     }
     if (name !== "") {
-    TASKS.push(task);
-    localStorage.setItem("main",JSON.stringify(TASKS));
+      TASKS.push(task);
+      localStorage.setItem("main",JSON.stringify(TASKS));
     }
   } 
 

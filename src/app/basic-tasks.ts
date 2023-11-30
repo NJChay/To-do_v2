@@ -1,6 +1,7 @@
 import { Task } from "./Task"
 
 export var TASKS: Task[] = [
+    /*
     {
         name: "Feed Dog",
         checked: true,
@@ -10,5 +11,5 @@ export var TASKS: Task[] = [
         name: "Water Plants",
         checked: true,
         id: "2"
-    }
+    }*/
 ]

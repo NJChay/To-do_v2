@@ -50,11 +50,16 @@ item {
   
 
 }
+
+searchheader {
+  display: flex;
+}
 .searchheader {
+  display: flex !important;
   background-color: skyblue;
   min-height: 50px;
   border: 1px solid steelblue;
-  align-items: center;
+  align-items: flex-end;
 }
 .container {
   

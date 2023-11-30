@@ -1,5 +1,5 @@
 <div class = "task">
-    <input class = "check" type = "checkbox" [checked]="task?.checked" id = {{task?.name}}>
-    <label class = "item" for = {{task?.name}}> {{task?.name}}</label>
-    <app-searchbutton (btnClick)="deleteItem(task)" text = "Delete" style="align-self: flex-end;" [class]="'delete-button'"></app-searchbutton>
+    <input class = "check" (change)="checkChange(task)" type = "checkbox" [checked]="task?.checked" id = {{task?.id}}>
+    <label class = "item" for = {{task?.id}}> {{task?.name}}</label>
+    <app-delbtn (btnClick)="deleteItem(task)" text = "Delete" style="align-self: flex-end;" [class]="'delete-button'"></app-delbtn>
 </div>
