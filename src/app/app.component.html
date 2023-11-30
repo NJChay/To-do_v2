@@ -5,9 +5,6 @@
     <app-searchheader ></app-searchheader>
 </div>
 <div>
-    <app-tasks></app-tasks>
+    <app-task-item *ngFor = "let task of tasks" [task]="task"></app-task-item>
 </div>
-
-
-<!--<p *ngFor="let item of todos" (click)="handleClick(item)">{{ item.title }}</p>
---><router-outlet></router-outlet>
+<router-outlet></router-outlet>
