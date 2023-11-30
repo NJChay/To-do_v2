@@ -1,6 +1,6 @@
 import { Task } from "./Task"
 
-export const TASKS: Task[] = [
+export var TASKS: Task[] = [
     {
         name: "Feed Dog",
         checked: true,

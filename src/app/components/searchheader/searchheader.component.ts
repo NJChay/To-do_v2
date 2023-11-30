@@ -1,4 +1,5 @@
 import { Task } from './../../Task';
+import { FormsModule } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SearchbuttonComponent } from '../searchbutton/searchbutton.component';
@@ -8,7 +9,7 @@ import { TASKS } from '../../basic-tasks';
 @Component({
   selector: 'app-searchheader',
   standalone: true,
-  imports: [CommonModule, SearchbuttonComponent],
+  imports: [CommonModule, SearchbuttonComponent, FormsModule],
   templateUrl: './searchheader.component.html',
   styleUrl: './searchheader.component.css'
 })
@@ -23,15 +24,12 @@ export class SearchheaderComponent implements OnInit{
     let task = {
       name,
       checked: false,
-      id: name
-      //id: name + JSON.parse(localStorage.getItem("main")).length
+      id: "" + Math.random()
     }
-    if (localStorage.length === 0) {
-      let tasks: Task[]= [];
-      localStorage.setItem("main",JSON.stringify(tasks))
-    }
-    //let newTasks: Task[] = JSON.parse(localStorage.getItem("main")).push(task);
+    if (name !== "") {
     TASKS.push(task);
+    localStorage.setItem("main",JSON.stringify(TASKS));
+    }
   } 
 
 }

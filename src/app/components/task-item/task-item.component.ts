@@ -24,5 +24,6 @@ export class TaskItemComponent {
         TASKS.splice(index, 1);
       }
     }
+    localStorage.setItem("main",JSON.stringify(TASKS));
   }
 }
