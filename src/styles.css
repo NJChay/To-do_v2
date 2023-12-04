@@ -11,11 +11,62 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+.holder {
+  background-color: bisque;
+  min-height: 100%;
+  border: 1px solid steelblue;
+  padding: 30px;
+  border-radius: 5px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.total {
+  background-color: lightblue;
+  min-height: 100px;
+  border: 1px solid steelblue;
+  padding: 30px;
+  width: 45%;
+  margin-right: 60px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: xx-large;
+}
+.complete {
+  background-color: lightblue;
+  width: 45%;
+  min-height: 100px;
+  border: 1px solid steelblue;
+  padding: 30px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: xx-large;
+}
+
+.detailheader {
+  display: flex;
+  justify-content: left;
+  text-align: center;
+  color: white;
+  min-height: 40px;
+  border: 1px solid steelblue;
+  background: skyblue;
+  font-size: 20px;
+  vertical-align: middle;
+}
 .title {
   color: white;
   text-align: center;
   font-size: 50px;
   
+}
+.home {
+  position: relative;
+}
+
+.homebtn {
+  margin-right: 43%;
 }
 
 .input {
@@ -28,7 +79,9 @@ body {
   font-size: 16px;
 }
 
-
+.remaining {
+  font-size: xx-large;
+}
 .check {
   height: 20px;
   width: 20px;
@@ -52,14 +105,17 @@ item {
 }
 
 searchheader {
-  display: flex;
+  display: flex !important;
+  justify-content: space-between !important;
 }
 .searchheader {
-  display: flex !important;
+  display: flex;
+  justify-content: space-between;
   background-color: skyblue;
   min-height: 50px;
   border: 1px solid steelblue;
-  align-items: flex-end;
+  
+  
 }
 .container {
   
@@ -97,6 +153,9 @@ searchheader {
   width: 100%;
 }
 
+.search {
+  justify-self: flex-end !important;
+}
 .delete-button {
   background-color: red !important;
   font-size: small ;
@@ -105,3 +164,6 @@ searchheader {
 
 }
 
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
