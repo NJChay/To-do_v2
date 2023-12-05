@@ -1,5 +1,5 @@
-<div class = "task">
-    <input class = "check" (change)="checkChange(task)" type = "checkbox" [checked]="task?.checked" id = {{task?.id}}>
-    <label class = "item" for = {{task?.id}}> {{task?.name}}</label>
+<div>
+    <input class = "check" (change)="checkChange(task)" type = "checkbox" [checked]="task?.completed" id = {{task?.id}}>
+    <label class = "item" for = {{task?.id}}> {{task?.title}}</label>
     <app-delbtn (btnClick)="deleteItem(task)" text = "Delete" style="align-self: flex-end;" [class]="'delete-button'"></app-delbtn>
 </div>

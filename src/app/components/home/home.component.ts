@@ -41,26 +41,17 @@ export class HomeComponent {
       datas.forEach((data: any) => {
         console.log(data);
         let newTask: Task = {
-          name: data.title,
-          checked: data.completed,
+          title: data.title,
+          completed: data.completed,
           id: data.id,
         }
         TASKS.push(newTask);
       })
     }, 100)
 
-
-    if (localStorage.getItem("main") === null) {
-      localStorage.setItem("main", JSON.stringify(TASKS));
-    } else {
-      const data = JSON.parse(localStorage.getItem('main') || '{}');
-      data.forEach((task: Task) => { TASKS.push(task) });
-    }
+    
     this.taskService.getTasks().subscribe((tasks) => this.tasks = tasks);
 
-  }
-  toAnim() {
-    this.router.navigate(['/anim']);
   }
 
 

@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Task } from '../../Task';
 import { FormsModule } from '@angular/forms';
@@ -6,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { SearchbuttonComponent } from '../searchbutton/searchbutton.component';
 import { TASKS } from '../../basic-tasks';
 import { DelbtnComponent } from '../delbtn/delbtn.component';
+import {v4 as uuidv4} from 'uuid';
 
 
 @Component({
@@ -18,6 +20,7 @@ import { DelbtnComponent } from '../delbtn/delbtn.component';
 export class SearchheaderComponent implements OnInit{
   constructor(
     private router: Router,
+    private http: HttpClient
   ) { 
     
   }
@@ -26,11 +29,14 @@ export class SearchheaderComponent implements OnInit{
   }
   newTask(name: string) {
     let task = {
-      name,
-      checked: false,
-      id: "" + Math.random()
+      id: uuidv4(),
+      title: name,
+      completed: false
     }
     if (name !== "") {
+      console.log(1);
+      this.http.post('http://127.0.0.1:8000/post', task).subscribe((response) => {});
+
       TASKS.push(task);
       localStorage.setItem("main",JSON.stringify(TASKS));
     }
