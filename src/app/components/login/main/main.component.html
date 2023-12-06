@@ -1,0 +1,11 @@
+<div class = "homecontainer">
+    <div class="login-container">
+        <h2>Login</h2>
+        <form action="#" method="post">
+            <input type="text" name="username" placeholder="Username" [(ngModel)]="user" required>
+            <input id = "pword" type="password" name="password" [(ngModel)]="pword" placeholder="Password" required>
+            <button type="submit" (click)="tryLogin()" >Login</button>
+        </form>
+        <p>Don't have an account? <button class = "signbtn" (click) = "toSign()">Sign up</button></p>
+    </div>
+</div>

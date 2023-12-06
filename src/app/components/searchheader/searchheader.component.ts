@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Task } from '../../Task';
 import { FormsModule } from '@angular/forms';
@@ -13,7 +13,7 @@ import {v4 as uuidv4} from 'uuid';
 @Component({
   selector: 'app-searchheader',
   standalone: true,
-  imports: [CommonModule, SearchbuttonComponent, FormsModule, DelbtnComponent],
+  imports: [CommonModule, HttpClientModule, SearchbuttonComponent, FormsModule, DelbtnComponent],
   templateUrl: './searchheader.component.html',
   styleUrl: './searchheader.component.css'
 })
@@ -29,9 +29,10 @@ export class SearchheaderComponent implements OnInit{
   }
   newTask(name: string) {
     let task = {
-      id: uuidv4(),
+      id: 'none',
       title: name,
-      completed: false
+      completed: false,
+      owner_id: "7d8e4d4f-93df-11ee-8fda-0242ac110002"
     }
     if (name !== "") {
       console.log(1);
@@ -41,8 +42,8 @@ export class SearchheaderComponent implements OnInit{
       localStorage.setItem("main",JSON.stringify(TASKS));
     }
   } 
-  toDetails() {
-    this.router.navigate(['/details']);
+  toLog() {
+    this.router.navigate(['']);
   }
 
 

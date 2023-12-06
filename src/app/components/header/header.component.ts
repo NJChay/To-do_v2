@@ -12,7 +12,7 @@ import { DelbtnComponent } from '../delbtn/delbtn.component';
   styleUrl: './header.component.css',
 })
 export class HeaderComponent implements OnInit{
-  title: string = 'To Do';
+  title: string = 'Our Tasks';
   constructor(
     private router: Router,
   ) { 

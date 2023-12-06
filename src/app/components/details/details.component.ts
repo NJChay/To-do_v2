@@ -23,6 +23,6 @@ export class DetailsComponent  {
     return element.checked == true;
 }).length
 toHome() {
-  this.router.navigate(['']);
+  this.router.navigate(['home']);
 }
 }

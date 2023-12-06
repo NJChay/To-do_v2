@@ -28,7 +28,8 @@ export class TaskItemComponent {
     let newtask = {
       id: toChange?.id,
       title: toChange?.title,
-      completed: !toChange?.completed
+      completed: !toChange?.completed,
+      owner_id: toChange?.owner_id
     }
     this.http.put('http://127.0.0.1:8000/put', newtask).subscribe((response) => {});
 

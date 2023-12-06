@@ -1,0 +1,16 @@
+
+<body>
+
+    <div class="signup-container">
+        <h2>Sign Up</h2>
+        <form action="#" method="post">
+            <input type="text" name="username" placeholder="Username" [(ngModel)]="user" required>
+            <input type="email" name="email" placeholder="Email" [(ngModel)]="email" required>
+            <input type="password" name="password" placeholder="Password" [(ngModel)]="pword" required>
+            <button type="submit" (click) = "checkInput()" >Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="#">Login</a></p>
+    </div>
+
+</body>
+

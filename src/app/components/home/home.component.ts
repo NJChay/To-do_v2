@@ -30,9 +30,10 @@ export class HomeComponent {
 
   ngOnInit(): void {
     localStorage.clear();
-    // setTimeout(() => {
-    //   this.router.navigate(['/details']);
-    // }, 5000);
+    while (TASKS.length !== 0) {
+      TASKS.pop();
+    }
+    
     let datas: any;
     this.http.get('http://127.0.0.1:8000/').subscribe((response) => {
       datas = response
@@ -44,6 +45,7 @@ export class HomeComponent {
           title: data.title,
           completed: data.completed,
           id: data.id,
+          owner_id: data.owner_id,
         }
         TASKS.push(newTask);
       })
