@@ -6,6 +6,7 @@ import { TASKS } from '../../basic-tasks';
 import { DelbtnComponent } from '../delbtn/delbtn.component';
 import { Router } from '@angular/router';
 import { HttpClient, HttpParams } from '@angular/common/http';
+import { env } from '../../env/env';
 
 @Component({
   selector: 'app-task-item',
@@ -31,7 +32,8 @@ export class TaskItemComponent {
       completed: !toChange?.completed,
       owner_id: toChange?.owner_id
     }
-    this.http.put('http://127.0.0.1:8000/put', newtask).subscribe((response) => {});
+    const apiURL = `${env.hostName}/put`;
+    this.http.put(apiURL, newtask).subscribe((response) => {});
 
     if (toChange) {
       toChange.completed = !toChange.completed
@@ -45,7 +47,8 @@ export class TaskItemComponent {
     if (taskNeedDelete) {
       let httpParams = new HttpParams().set("id", taskNeedDelete.id)
       let options = { params: httpParams};
-      this.http.delete('http://127.0.0.1:8000/delete', options).subscribe((response) => {});
+      const apiURL = `${env.hostName}/delete`;
+      this.http.delete(apiURL, options).subscribe((response) => {});
 
       const index = TASKS.indexOf(taskNeedDelete);
       if (index > -1) {

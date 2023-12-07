@@ -6,6 +6,7 @@ import { LoginErrorPopupComponent } from '../error/error.component';
 import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { env } from '../../../env/env';
 
 @Component({
   selector: 'app-signup',
@@ -35,7 +36,8 @@ export class SignupComponent implements OnInit{
       email: email,
       password: pword
     } 
-    this.http.post('http://127.0.0.1:8000/postuser', use).subscribe((response) => {});
+    const apiURL = `${env.hostName}/postuser`;
+    this.http.post(apiURL, use).subscribe((response) => {});
   }
 
   checkInput(){

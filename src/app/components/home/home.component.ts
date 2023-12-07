@@ -10,6 +10,7 @@ import { HttpClient } from '@angular/common/http';
 import { async, of } from 'rxjs';
 import { Router, RouterModule } from '@angular/router';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import { env } from '../../env/env';
 
 @Component({
   selector: 'app-home',
@@ -35,7 +36,8 @@ export class HomeComponent {
     }
     
     let datas: any;
-    this.http.get('http://127.0.0.1:8000/').subscribe((response) => {
+    const apiURL = `${env.hostName}`;
+    this.http.get(apiURL).subscribe((response) => {
       datas = response
     })
     setTimeout(() => {

@@ -8,6 +8,7 @@ import { SearchbuttonComponent } from '../searchbutton/searchbutton.component';
 import { TASKS } from '../../basic-tasks';
 import { DelbtnComponent } from '../delbtn/delbtn.component';
 import {v4 as uuidv4} from 'uuid';
+import { env } from '../../env/env';
 
 
 @Component({
@@ -35,8 +36,8 @@ export class SearchheaderComponent implements OnInit{
       owner_id: "7d8e4d4f-93df-11ee-8fda-0242ac110002"
     }
     if (name !== "") {
-      console.log(1);
-      this.http.post('http://127.0.0.1:8000/post', task).subscribe((response) => {});
+      const apiURL = `${env.hostName}/post`;
+      this.http.post(apiURL, task).subscribe((response) => {});
 
       TASKS.push(task);
       localStorage.setItem("main",JSON.stringify(TASKS));
