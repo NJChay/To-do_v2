@@ -1,4 +1,5 @@
 import { Task } from "./Task"
+import { User } from "./Task"
 
 export var TASKS: Task[] = [
     /*
@@ -12,4 +13,8 @@ export var TASKS: Task[] = [
         checked: true,
         id: "2"
     }*/
+]
+
+export var USERS: User[] = [
+    
 ]

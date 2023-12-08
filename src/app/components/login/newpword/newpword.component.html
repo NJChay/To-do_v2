@@ -1,0 +1,15 @@
+<body>
+    <div class="signup-container">
+        <form action="#" method="post">
+            <p>New Password</p>
+            <input type="text" name="username" placeholder="New Password" [(ngModel)]="newp" required>
+            <p>Confirm Password</p>
+            <input type="email" name="email" placeholder="Confirm Password" [(ngModel)]="conf" required>
+            <button type="submit" (click) = "updatePass()" >Update</button>
+        </form>
+        <p><a href="#">Cancel</a></p>
+    </div>
+
+</body>
+
+

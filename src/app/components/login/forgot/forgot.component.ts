@@ -1,60 +1,50 @@
 import { User } from './../../../Task';
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { env } from '../../../env/env';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { LoginErrorPopupComponent } from '../error/error.component';
-import { FormsModule } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
-import { HttpClientModule } from '@angular/common/http';
-import { env } from '../../../env/env';
+import { USERS } from '../../../basic-tasks';
 
 @Component({
-  selector: 'app-main',
+  selector: 'app-forgot',
   standalone: true,
   imports: [CommonModule, FormsModule, HttpClientModule],
-  templateUrl: './main.component.html',
-  styleUrl: './main.component.css'
+  templateUrl: './forgot.component.html',
+  styleUrl: './forgot.component.css'
 })
-export class MainComponent {
-  user: string = '';
-  pword: string = '';
+export class ForgotComponent {
+  email: string = '';
   constructor(
     private router: Router,
     private http: HttpClient,
     private dialog: MatDialog,
-  ) {
-  }
-
-  tryLogin() {
+  ) {}
+  findEmail() {
     let use = {
       id: "",
-      name: this.user,
-      email: "",
-      password: this.pword
+      name: "",
+      email: this.email,
+      password: ""
     }
     let allow = true;
-    const apiURL = `${env.hostName}/login`;
+    const apiURL = `${env.hostName}/forgot`;
     this.http.post(apiURL, use).subscribe((response) => {
+      //USERS.push(response)
     }, err => {
       allow = false;
     });
     setTimeout(() => {   
       if (allow) {
-        this.router.navigate(['home']);
+        USERS.push(use)
+        this.router.navigate(['newp'])
       } else {
         const dialogRef = this.dialog.open(LoginErrorPopupComponent, {
-          data: { title: 'Login Error', message: 'Incorrect username or password' }})
+          data: { title: 'Email Not Found', message: 'Enter a new email to try again' }})
       }
     }, 100);
   }
-
-  toSign() {
-    this.router.navigate(['signup']);
-  }
-
-  forgotPass() {
-    this.router.navigate(['forgot'])
-  }
-
 }
