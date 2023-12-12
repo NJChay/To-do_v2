@@ -1,0 +1,8 @@
+.problem {text-align:center}
+.enclose {
+    position:fixed;
+    bottom:0px;
+    width:100%;
+    margin-left: 20px;
+}
+

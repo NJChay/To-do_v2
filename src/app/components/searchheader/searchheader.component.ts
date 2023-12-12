@@ -46,6 +46,9 @@ export class SearchheaderComponent implements OnInit{
   toLog() {
     this.router.navigate(['']);
   }
+  toSug() {
+    this.router.navigate(['suggest']);
+  }
 
 
 }
