@@ -1,6 +1,8 @@
 .homecontainer{
     font-family: Poppins;
+    background-color: rgb(236, 207, 236);
     margin: 0;
+    height: 100% !important;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,7 +33,7 @@
 .login-container button {
     width: 100%;
     padding: 10px;
-    background-color: skyblue;
+    background-color: purple;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -49,7 +51,7 @@
 }
 
 .login-container button:hover {
-    background-color: lightblue;
+    background-color: rgb(141, 69, 141);
 }
 
 .login-container p {

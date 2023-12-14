@@ -8,7 +8,7 @@ import { env } from '../env/env';
 export class ChatbotService {
   
   openai = new OpenAI({
-    apiKey:"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", dangerouslyAllowBrowser: true
+    apiKey:env.apiKey, dangerouslyAllowBrowser : true
   });
   constructor() { }
 
@@ -19,7 +19,7 @@ export class ChatbotService {
           {
             role: "system",
             content:
-              "You recommend 15 to-do list tasks in dot point form based on a given topic",
+              "You recommend 10 to-do list tasks in dot point form based on a given topic and display the topic at the top",
             
           },
           {

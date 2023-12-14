@@ -1,17 +1,17 @@
-<div class = "home">
+<div class = "sughome">
     <app-delbtn styleclass = "homebtn" (btnClick)="toHome()" text="Home"></app-delbtn>
     <h1 style="text-align: center;">Enter a topic for task suggestions:</h1>
-</div>
-
-<div style="margin-top: 20px;">
-    <div *ngFor="let data of textList">
-        <p class="response" style="white-space: pre-line; margin-left: 20px;">{{data.response}}</p>
-        <div class = "enclose problem">
-            <mat-form-field [style.width.px]=500>
-                <mat-label> Topic </mat-label>  
-                <input matInput type="text" [(ngModel)]="data.text" class="input2" >
-            </mat-form-field>
-            <button type="button" (click)="generateText(data)" class="btn2">Generate</button>
+    <div style="margin-top: 20px;">
+        <div *ngFor="let data of textList">
+            <p class="response" style="white-space: pre-line; margin-left: 20px;">{{data.response}}</p>
+            <div class = "enclose problem">
+                <mat-form-field [style.width.px]=500>
+                    <mat-label> Topic </mat-label>  
+                    <input matInput type="text" [(ngModel)]="data.text" class="input2" >
+                </mat-form-field>
+                <button style = "height: 80px" type="button" (click)="generateText(data)" class="btn">Generate</button>
+            </div>
         </div>
     </div>
 </div>
+

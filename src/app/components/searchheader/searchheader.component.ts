@@ -50,5 +50,9 @@ export class SearchheaderComponent implements OnInit{
     this.router.navigate(['suggest']);
   }
 
+  toCom() {
+    this.router.navigate(['comments']);
+  }
+
 
 }
