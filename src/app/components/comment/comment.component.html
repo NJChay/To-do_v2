@@ -1,0 +1,17 @@
+<div class="card mb-4" style = "background-color: rgb(131, 86, 131); border-color: blueviolet; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;" >
+    <div class="card-body">
+      <h4>{{task}}:</h4>
+      <p>{{text}}</p>
+
+      <div class="d-flex justify-content-between">
+        <div class="d-flex flex-row align-items-center">
+          <p class="small mb-0 ms-2">{{user}}</p>
+        </div>
+        <div class="d-flex flex-row align-items-center">
+          <app-delbtn text = "Like"></app-delbtn>
+          <i class="far fa-thumbs-up mx-2 fa-xs text-black" style="margin-top: -0.16rem;"></i>
+          <p class="small text-muted mb-0" style="color: aliceblue !important;">{{likes}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
