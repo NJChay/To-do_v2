@@ -41,6 +41,7 @@ export class MainComponent {
     });
     setTimeout(() => {   
       if (allow) {
+        localStorage.setItem("user", JSON.stringify(use))
         this.router.navigate(['home']);
       } else {
         const dialogRef = this.dialog.open(LoginErrorPopupComponent, {

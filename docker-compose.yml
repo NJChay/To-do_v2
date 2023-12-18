@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: TODO-v2
+    restart: unless-stopped
+    ports:
+      - "80:80"
