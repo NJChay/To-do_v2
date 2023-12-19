@@ -33,7 +33,7 @@ export class SearchheaderComponent implements OnInit{
       id: 'none',
       title: name,
       completed: false,
-      owner_id: "1"
+      owner_id: JSON.parse(localStorage.getItem("user") || '{}').id
     }
     if (name !== "") {
       const apiURL = `${env.hostName}/post`;

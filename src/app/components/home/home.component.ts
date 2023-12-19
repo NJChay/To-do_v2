@@ -30,7 +30,7 @@ export class HomeComponent {
   }
 
   ngOnInit(): void {
-    localStorage.clear();
+    //localStorage.clear();
     while (TASKS.length !== 0) {
       TASKS.pop();
     }

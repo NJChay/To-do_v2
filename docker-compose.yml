@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: TODO-v2
+    container_name: TODO-v2-FE
     restart: unless-stopped
     ports:
       - "80:80"

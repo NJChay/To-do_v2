@@ -34,14 +34,17 @@ export class MainComponent {
       password: this.pword
     }
     let allow = true;
+    let new_user: Object;
     const apiURL = `${env.hostName}/login`;
     this.http.post(apiURL, use).subscribe((response) => {
+      console.log(response)
+      new_user = response
+      localStorage.setItem("user", JSON.stringify(new_user));
     }, err => {
       allow = false;
     });
     setTimeout(() => {   
       if (allow) {
-        localStorage.setItem("user", JSON.stringify(use))
         this.router.navigate(['home']);
       } else {
         const dialogRef = this.dialog.open(LoginErrorPopupComponent, {
